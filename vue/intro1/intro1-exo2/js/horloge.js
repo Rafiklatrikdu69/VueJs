@@ -18,7 +18,7 @@ export default {
             }else if (props.mode===1){
                 return new Date(date.value).toLocaleDateString()
             }else {
-                return new Date(date.value).toLocaleTimeString() +"-"+ new Date(date.value).toLocaleDateString()
+                return new Date(date.value).toLocaleTimeString() +" - "+ new Date(date.value).toLocaleDateString()
             }
         }
     

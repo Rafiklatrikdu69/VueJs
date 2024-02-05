@@ -23,5 +23,6 @@ export default {
         // exposition pour le template de la méthode
         return { display };
     },
-    template:"<p>temps écoulé: {{display()}}</p>"
+    template:`<p>temps écoulé: {{display()}}</p>
+    <button @click>Recommencer</button>`
 }

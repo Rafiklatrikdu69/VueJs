@@ -3,17 +3,6 @@ const App = Vue.createApp({
   components: {
     Horloge,
   },
-  template: '<div v-for="index in 3" :key="index"><Horloge :mode=index-1 /> </div>',
+  template: '<div v-for="index in 3" :key="index"><Horloge v-bind:mode=index-1 /> </div>',//les : ou v-bind evalue l'expression comme ca index-1 ne sera pas traduit comme une chaine ordinaire 
 });
 App.mount("#monHorloge");
-
-// le composant est écrit dans counter.js
-// import Counter from "./counter.js";
-// const App = Vue.createApp({
-//     // composants utilisables dans le template
-//     components: {
-//         Counter
-//     },
-//     template: '<Counter :start="5"/> ',
-// });
-// App.mount("#myApp");
