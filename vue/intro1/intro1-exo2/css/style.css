@@ -1,0 +1,16 @@
+p{
+    color: white;
+    font-size: 20px;
+    font-family:fantasy;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body{
+    background-color: #ff00bf;
+    font-family:fantasy;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 0;
+}

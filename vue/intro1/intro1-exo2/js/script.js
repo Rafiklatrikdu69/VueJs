@@ -3,7 +3,7 @@ const App = Vue.createApp({
   components: {
     Horloge,
   },
-  template: "<Horloge :mode=0 /> <Horloge :mode=1 /><Horloge :mode=2 />",
+  template: '<div v-for="index in 3" :key="index"><Horloge :mode=index-1 /> </div>',
 });
 App.mount("#monHorloge");
 
