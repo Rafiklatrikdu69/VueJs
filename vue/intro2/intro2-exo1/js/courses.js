@@ -13,14 +13,16 @@ export default {
     function reset(){
         listec.value =[]
     }
-    const listec = Vue.ref([{id: 1, nom: "navets",urgent:false}]);
+    const listec = Vue.ref([{id: 1, nom: "navets",urgent:true}]);
 
     const nouveau = Vue.ref({ nom: "", urgent: false });
     return { listec, nouveau, button, listen,reset };
   },
   template: `<ul>
     <li v-for="c in listec" :key="c.id">
-    {{c.nom}} {{c.urgent}}</li>
+    <p  v-if="c.urgent">{{c.nom}} <strong>urgent</strong></p>
+    <p  v-if="!c.urgent">{{c.nom}}</p>
+    </li>
     </ul> 
     <label> Ajouter un article : </label>
     <input v-model.lazy.trim="nouveau.nom" />
