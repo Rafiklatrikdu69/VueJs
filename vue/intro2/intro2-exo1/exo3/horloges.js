@@ -4,13 +4,13 @@ export default {
     props:['mode'],
     setup() {
         const listeHorloge = Vue.ref([])
-        const mode = Vue.ref([{mode:null}])
+        const mode = Vue.ref(0)
         
         function ajout(event){
             console.log("click !")
             if (event.target.tagName === "BUTTON"){
-                console.log(mode.value.mode)
-                 listeHorloge.value.push({mode :mode.value.mode})
+                console.log(mode.value)
+                 listeHorloge.value.push({mode :mode.value})
             }
         }
         function reset(){
@@ -26,8 +26,8 @@ export default {
     <div>
   
         <button @click="ajout">ajouter une horloge</button> qui indique 
-        <select v-model="mode.mode" mutiple>
-            <option :value="0" selected>juste l'heure</option>
+        <select v-model="mode">
+            <option :value="0">juste l'heure</option>
             <option :value="1">juste la date</option>
             <option :value="2">la date et l'heure</option>
         </select>
