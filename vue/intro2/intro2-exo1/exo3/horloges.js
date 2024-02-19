@@ -31,10 +31,10 @@ export default {
             <option :value="1">juste la date</option>
             <option :value="2">la date et l'heure</option>
         </select>
-        <div v-for="l in listeHorloge" :key="l.mode">
+        <div v-for="(l,index) in listeHorloge" :key="l.mode">
         <ul>
         <li>
-            <horloge :mode="l.mode"/>
+            <horloge :mode="l.mode" @supprimer="listeHorloge.splice(index,1)"/>
             </li>
             </ul>
         </div>

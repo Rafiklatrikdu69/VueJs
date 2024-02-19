@@ -1,6 +1,7 @@
 
 export default {
     props:["mode"],
+    emits:["supprimer"],
     setup(props) {
 
         let date = Vue.ref(new Date())
@@ -27,5 +28,6 @@ export default {
     template:/*html*/
     
     `
-    <p>Avec le mode {{props.mode}},l'horloge indique : <strong id='display'> {{display()}} </strong> </p>`
+    <p>Avec le mode {{props.mode}},l'horloge indique : <strong id='display'> {{display()}} </strong> </p>
+    <button @click="$emit('supprimer')">Supprimer</button>`
 }
