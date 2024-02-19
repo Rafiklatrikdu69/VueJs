@@ -1,7 +1,6 @@
 import horloge from "./js/horloge.js";
 
 export default {
-    props:['mode'],
     setup() {
         const listeHorloge = Vue.ref([])
         const mode = Vue.ref(0)
@@ -34,7 +33,7 @@ export default {
         <div v-for="(l,index) in listeHorloge" :key="l.mode">
         <ul>
         <li>
-            <horloge :mode="l.mode" @supprimer="listeHorloge.splice(index,1)"/>
+            <horloge :mode="l.mode" @supprimer="listeHorloge.splice(index,1)" @informer="(n)=>console.log(n)"/>
             </li>
             </ul>
         </div>
