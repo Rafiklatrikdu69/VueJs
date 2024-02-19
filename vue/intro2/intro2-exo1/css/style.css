@@ -1,4 +1,4 @@
-.urgent span:first-child{
+.urgent {
     background-color: yellow;
 }
 .italic{

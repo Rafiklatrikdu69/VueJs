@@ -8,7 +8,7 @@ export default {
         Vue.onMounted(()=>{
             intervalId=setInterval(() => {
               date.value = new Date()
-               
+                console.log(date.value)
             }, 1000);
         });
         Vue.onUnmounted(()=>clearInterval(intervalId));
@@ -25,6 +25,7 @@ export default {
         return { props,display };
     },
     template:/*html*/
+    
     `
     <p>Avec le mode {{props.mode}},l'horloge indique : <strong id='display'> {{display()}} </strong> </p>`
 }

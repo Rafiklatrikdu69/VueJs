@@ -3,13 +3,13 @@ export default {
     // const isActive = ref(true)
     // const hasError = ref(false)
     const button = Vue.ref("");
-    
+    let nouvelId= Vue.ref(-1);;
     function listen(event) {
       if (event.target.tagName === "BUTTON")
       button.value = event.target.textContent;
       console.log(button.value);
       console.log(nouveau.value);
-      listec.value.push({ id: 4, nom: nouveau.value.nom ,urgent: nouveau.value.urgent});
+      listec.value.push({ id: nouvelId+1,...nouveau.value});
       console.log(listec.value);
       nouveau.urgent="";
       nouveau.nom="";
@@ -17,7 +17,7 @@ export default {
     function reset(){
       listec.value =[]
     }
-    const listec = Vue.ref([{id: 1, nom: "navets",urgent:true}]);//refrence vers un objet 
+    const listec = Vue.ref([]);//refrence vers un objet 
     
     const nouveau = Vue.ref({ nom: "", urgent: false });
     return { listec, nouveau, button, listen,reset };
@@ -28,8 +28,7 @@ export default {
   <ul>
     
       <li v-for="c in listec" :key="c.id">
-          <span class="urgent" v-if="c.urgent"><span  >{{c.nom}}</span> <strong>(urgent)</strong><span class="italic">(L'identifiant unique est {{c.id}})</span></span>
-          <span v-else>{{c.nom}} <span class="italic">(L'identifiant unique est {{c.id}})</span></span>
+          <span><span :class="{urgent : c.urgent}">{{c.nom}}</span> <strong v-if="c.urgent" >(urgent)</strong><span class="italic">(L'identifiant unique est {{c.id}})</span></span>
       </li>
 
   </ul> 
