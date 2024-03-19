@@ -9,7 +9,7 @@ export default {
       button.value = event.target.textContent;
       console.log(button.value);
       console.log(nouveau.value);
-      listec.value.push({ id: nouvelId+1,...nouveau.value});
+      listec.value.push({ id: 4,...nouveau.value});
       console.log(listec.value);
       nouveau.urgent="";
       nouveau.nom="";
